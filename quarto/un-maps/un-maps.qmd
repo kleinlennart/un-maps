@@ -1,0 +1,68 @@
+---
+title: "Interactive UN Maps in Quarto"
+date: last-modified
+author: "Lennart Klein"
+format: html
+---
+
+<!-- quarto preview quarto/un-maps/un-maps.qmd -->
+
+To include an interactive map in a Quarto document, you can use the [{leaflet}](https://r-graph-gallery.com/package/leaflet.html) package.
+
+
+## Default Leaflet
+```{r}
+#| column: screen
+#| out-width: 100%
+
+library(leaflet)
+
+leaflet() |>
+  addTiles() |> # Add default OpenStreetMap map tiles
+  addMarkers(lng = 174.768, lat = -36.852, popup = "The birthplace of R")
+```
+
+
+## UN Leaflet
+
+Now to add an official UN maps as a base, you can just [update the tile](https://github.com/leaflet-extras/leaflet-providers) to one of the Clear Maps provided by [United Nations Geospatial](https://geoportal.un.org/arcgis/home/item.html?id=541557fd0d4d42efb24449be614e6887).
+
+
+```{r}
+#| column: screen
+#| out-width: 100%
+#| fig-cap: "Interactive Map with UN Clear Map tiles[^disclaimer]."
+
+library(leaflet)
+
+leaflet(width = "100%", height = "800px") |> # change height here
+  addTiles(
+    urlTemplate = "https://geoservices.un.org/arcgis/rest/services/ClearMap_WebPlain/MapServer/tile/{z}/{y}/{x}",
+    attribution = "United Nations Geospatial"
+  ) |>
+  setView(lng = 10, lat = 0, zoom = 3)
+```
+
+[^disclaimer]: The designations employed and the presentation of material on this map do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.
+
+
+### Other UN Map Options
+
+- `ClearMap_Dark`
+- `ClearMap_Gray`
+- `ClearMap_Imagery`
+- `ClearMap_Plain`
+- `ClearMap_Topo`
+
+---
+
+- `ClearMap_WebDark`
+- `ClearMap_WebGray`
+- `ClearMap_WebPlain`
+- `ClearMap_WebTopo`
+
+<!-- ```{=html}
+<iframe width="800" height="500" src="https://geoportal.un.org/arcgis/home/item.html?id=541557fd0d4d42efb24449be614e6887" title="UN Maps"></iframe>
+``` -->
+
+Next to the UN Maps, there also many other [leaflet providers](https://leaflet-extras.github.io/leaflet-providers/preview/).
