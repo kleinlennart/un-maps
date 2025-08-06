@@ -1,5 +1,7 @@
 # UN Maps
 
+How to use official UN Maps in interactive Quarto documents.
+
 ## Resources
 
 - https://quarto.org/docs/interactive/
