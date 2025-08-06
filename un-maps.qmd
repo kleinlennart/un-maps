@@ -9,7 +9,7 @@ format:
         code-tools: true
 ---
 
-<!-- quarto preview quarto/un-maps/un-maps.qmd -->
+<!-- quarto preview un-maps.qmd -->
 
 To include an interactive map in a [Quarto](https://quarto.org/) document, you can use the [{leaflet}](https://r-graph-gallery.com/package/leaflet.html) package.
 
