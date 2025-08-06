@@ -1,6 +1,10 @@
-# UN Maps
+# UN Maps in Quarto
 
 How to use official UN Maps in interactive Quarto documents.
+
+See the [live version](https://kleinbutsignificant.quarto.pub/un-maps/).
+
+View the source script: [`un-maps.qmd`](un-maps.qmd)
 
 ## Resources
 

@@ -1,0 +1,4 @@
+- source: un-maps.qmd
+  quarto-pub:
+    - id: 2c42716b-d07d-4fc4-87a0-c8e2b2765732
+      url: https://kleinbutsignificant.quarto.pub/un-maps
